@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Job Finder</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+  <div class="logo">STUDENTJOB</div>
+
+  <div class="nav-links">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Jobs</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <div>
+    <button class="post-btn">Post a Job</button>
+    <button class="login-btn" onclick="goLogin()">Log In</button>
+  </div>
+</div>
+
+<!-- Hero Section -->
+<div class="hero">
+
+  <h1>The Easiest Way To Get Your Dream Job</h1>
+  <p>Find part-time jobs easily near your location</p>
+
+  <div class="search-box">
+
+    <input type="text" id="jobInput" placeholder="Job title, Company...">
+
+    <select id="region">
+      <option value="">Select Region</option>
+      <option value="Nellore">Nellore</option>
+      <option value="Hyderabad">Hyderabad</option>
+      <option value="Chennai">Chennai</option>
+      <option value="Bangalore">Bangalore</option>
+      <option value="Delhi">Delhi</option>
+      <option value="Mumbai">Mumbai</option>
+      <option value="Pune">Pune</option>
+    </select>
+
+    <select id="type">
+      <option value="">Select Job Type</option>
+      <option value="Part Time">Part Time</option>
+      <option value="Full Time">Full Time</option>
+    </select>
+
+    <button class="search-btn" onclick="showJobs()">Search Job</button>
+
+  </div>
+
+</div>
+
+<!-- JOB CARDS -->
+<div class="jobs-section" id="jobs">
+
+  <div class="job-card">
+    <p>$120/hr</p>
+    <h3>Senior UI Developer</h3>
+    <p>Nike</p>
+    <button>View</button>
+  </div>
+
+  <div class="job-card">
+    <p>$150/hr</p>
+    <h3>Senior Backend Engineer</h3>
+    <p>Google</p>
+    <button>View</button>
+  </div>
+
+  <div class="job-card">
+    <p>$125/hr</p>
+    <h3>Azure Data Engineer</h3>
+    <p>Airbnb</p>
+    <button>View</button>
+  </div>
+
+  <div class="job-card">
+    <p>$130/hr</p>
+    <h3>Frontend Developer</h3>
+    <p>Amazon</p>
+    <button>View</button>
+  </div>
+
+  <div class="job-card">
+    <p>$140/hr</p>
+    <h3>Full Stack Developer</h3>
+    <p>Microsoft</p>
+    <button>View</button>
+  </div>
+
+  <div class="job-card">
+    <p>$110/hr</p>
+    <h3>UI Designer</h3>
+    <p>Adobe</p>
+    <button>View</button>
+  </div>
+
+</div>
+
+<script>
+function goLogin(){
+  window.location.href = "login.html";
+}
+
+function showJobs(){
+
+  let jobsSection = document.getElementById("jobs");
+  let cards = document.querySelectorAll(".job-card");
+
+  // show section
+  jobsSection.style.display = "grid";
+
+  // show ALL cards
+  cards.forEach(card => {
+    card.style.display = "block";
+  });
+
+  // scroll down
+  jobsSection.scrollIntoView({ behavior: "smooth" });
+}
+</script>
+
+</body>
+</html>
